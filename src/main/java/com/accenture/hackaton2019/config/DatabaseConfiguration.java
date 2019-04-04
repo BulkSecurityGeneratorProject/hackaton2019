@@ -14,6 +14,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.sql.SQLException;
+import java.lang.NumberFormatException;
 
 @Configuration
 @EnableJpaRepositories("com.accenture.hackaton2019.repository")
@@ -43,7 +44,7 @@ public class DatabaseConfiguration {
         return H2ConfigurationHelper.createServer(port);
     }
 	
-    private String getValidPortForH2() {
+    private String getValidPortForH2() throws NumberFormatException {
         int port = Integer.parseInt(env.getProperty("server.port"));
         if (port < 10000) {
             port = 10000 + port;

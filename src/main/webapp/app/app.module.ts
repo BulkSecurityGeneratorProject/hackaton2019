@@ -24,6 +24,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
 @NgModule({
     imports: [
         BrowserModule,
+        Hackaton2019AppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
@@ -37,8 +38,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         Hackaton2019HomeModule,
         Hackaton2019AccountModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
-        Hackaton2019EntityModule,
-        Hackaton2019AppRoutingModule
+        Hackaton2019EntityModule
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [

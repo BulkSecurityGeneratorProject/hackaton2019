@@ -9,11 +9,11 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
     imports: [
         RouterModule.forRoot(
             [
+                ...LAYOUT_ROUTES,
                 {
                     path: 'admin',
                     loadChildren: './admin/admin.module#Hackaton2019AdminModule'
-                },
-                ...LAYOUT_ROUTES
+                }
             ],
             { useHash: true, enableTracing: DEBUG_INFO_ENABLED }
         )

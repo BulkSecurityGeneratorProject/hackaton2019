@@ -4,6 +4,7 @@ import com.accenture.hackaton2019.security.jwt.JWTFilter;
 import com.accenture.hackaton2019.security.jwt.TokenProvider;
 import com.accenture.hackaton2019.web.rest.vm.LoginVM;
 
+import com.codahale.metrics.annotation.Timed;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import org.springframework.http.HttpHeaders;
@@ -34,6 +35,7 @@ public class UserJWTController {
     }
 
     @PostMapping("/authenticate")
+    @Timed
     public ResponseEntity<JWTToken> authorize(@Valid @RequestBody LoginVM loginVM) {
 
         UsernamePasswordAuthenticationToken authenticationToken =
